@@ -32,6 +32,28 @@
         font-weight: 900;
         gap: 10px;
     }
+    .content {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+        gap: 10px;
+
+    }
+    .box {
+        height: 500px;
+        width: 100px;
+        padding: 10px;
+        border: 1px solid black;
+        border-radius: 30%;
+    }
+    .box img {
+        height: 250px;
+        width: 300px;
+    }
+
+    .discount {
+        display: flex;
+        gap: 10px;
+    }
 </style>
 <body>
     <div class="ontop">
@@ -44,7 +66,26 @@
     </div>
     <div class="content">
         <div class="box">
-            <img src="" alt="">
+            <img src="huay.jpg" alt="">
+            <h4>หวยไทย</h4>
+            <h1>฿100</h1>
+            <div class="discount">
+                <s>150 </s>
+                <p>-35%</p>
+            </div>
+            
+
+        </div>
+        <div class="box">
+            <img src="swim.jpg" alt="">
+            <h4>หวยไทย</h4>
+            <h1>฿100</h1>
+            <div class="discount">
+                <s>150 </s>
+                <p>-35%</p>
+            </div>
+            
+
         </div>
     </div>
 
