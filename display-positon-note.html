@@ -6,7 +6,125 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .dashed-box {
+            margin: 10px;
+            padding: 20px;
+            border: 1px  dashed gray;
+            background-color: azure;
+           
+        }
+        .pink-box {
+            padding: 20px;
+            background-color: pink;
+        }
+        .orange-box {
+            padding: 20px;
+            background-color: orange;
+        }
+        .yellow-box {
+            padding: 20px;
+            background-color: yellow;
+        }
+        .green-box {
+            padding: 10px;
+            background-color: green;
+        }
+        .purpp-box {
+            padding: 10px;
+            background-color: purple;
+        }
+        .red-box {
+            padding: 10px;
+            background-color: red;
+        }
+
+        .number2{
+            display: inline-flex;
+        }
+        .number22{
+            display: block;
+        }
+        .number23{
+            display: inline-block;
+            
+        }
+    </style>
 <body>
+    <!--Start 1-->
+    <h1>Box Model</h1>
+    <div class="dashed-box">
+        <div class="pink-box">
+            <div class="orange-box">
+                <div class="yellow-box">
+                    <div class="green-box"><h3>Simple Box</h3></div>
+                </div>
+            </div>
+        </div>
+    </div><br>
+    <!--End 1-->
+
+    <!--Start 2-->
+    <h1>CSS Display</h1><br>
+    <h2>inline</h2><br>
+    <div class="dashed-box">
+        <div class="number2">
+            <div class="yellow-box">inline text1</div>
+            <div class="orange-box">inline text2</div>
+            <div class="red-box">   inline text3</div>
+            <div class="green-box"> inline text3</div>
+            <div class="purpp-box"> inline text3</div>
+        </div>
+    </div><br>
     
+    <h2>Block</h2><br>
+    <div class="dashed-box">
+        <div class="number22">
+            <div class="yellow-box">block text1</div>
+            <div class="orange-box">block text2</div>
+            <div class="red-box">   block text3</div>
+            <div class="green-box"> block text3</div>
+            <div class="purpp-box"> block text3</div>
+        </div>   
+    </div><br>
+
+    <h2>inline-block</h2>
+    <br><div class="dashed-box">
+        <div class="number23">
+            <div class="fruit1"><h3>apple</h3></div>
+            <div class="fruit2"><h3>orange</h3></div>
+            <div class="fruit3"><h3>mango</h3></div>
+            <div class="fruit4"><h3>watermelon</h3></div>
+        </div>
+    </div>
+
+    <h2>none</h2>
+    <br><div class="dashed-box">
+        <div class="number24">
+            <div class="fruit1"><h3>apple</h3></div>
+            <div class="fruit2"><h3>orange</h3></div>
+            <div class="fruit3"><h3>mango</h3></div>
+            <div class="fruit4"><h3>watermelon</h3></div>
+        </div>
+    </div>
+    <h2>display:none vs visibility:hidden</h2>
+    <br><div class="dashed-box">
+        <div class="number24">
+            <div class="fruit1"><h3>apple</h3></div>
+            <div class="fruit2"><h3>orange</h3></div>
+            <div class="fruit3"><h3>mango</h3></div>
+            <div class="fruit4"><h3>watermelon</h3></div>
+        </div>
+    </div>
+    <!--End 2-->
+
+    <!--Start 3-->
+    
+
 </body>
 </html>
