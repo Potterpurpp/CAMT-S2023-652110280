@@ -11,6 +11,7 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+            list-style: none;
         }
         .dashed-box {
             margin: 10px;
@@ -47,12 +48,28 @@
         .number2{
             display: inline-flex;
         }
-        .number22{
-            display: block;
-        }
-        .number23{
+        nav li {
             display: inline-block;
-            
+        }
+        .watermelon {
+            display: none;
+        }
+        .orange {
+            visibility: hidden;
+        }
+        /* Css position*/
+        .blue-box {
+            height: 200px;
+            width: 200px;
+            background-color: blue;
+            position: static;
+        }
+
+        .fixed-wh .dashed-box .blue-box{
+            position: absolute;
+            height: 100px;
+            width: 400px;
+
         }
     </style>
 <body>
@@ -95,35 +112,71 @@
 
     <h2>inline-block</h2>
     <br><div class="dashed-box">
-        <div class="number23">
-            <div class="fruit1"><h3>apple</h3></div>
-            <div class="fruit2"><h3>orange</h3></div>
-            <div class="fruit3"><h3>mango</h3></div>
-            <div class="fruit4"><h3>watermelon</h3></div>
-        </div>
+        <nav>
+            <li><h3>apple</h3></li>
+            <li><h3>orange</h3></li>
+            <li><h3>mango</h3></li>
+            <li><h3>watermelon</h3></li>
+        </nav>   
     </div>
 
     <h2>none</h2>
     <br><div class="dashed-box">
-        <div class="number24">
-            <div class="fruit1"><h3>apple</h3></div>
-            <div class="fruit2"><h3>orange</h3></div>
-            <div class="fruit3"><h3>mango</h3></div>
-            <div class="fruit4"><h3>watermelon</h3></div>
-        </div>
+        <nav>
+            <li><h3>apple</h3></li>
+            <li><h3>orange</h3></li>
+            <li><h3>mango</h3></li>
+            <li class="watermelon"><h3>watermelon</h3></li>
+        </nav> 
     </div>
     <h2>display:none vs visibility:hidden</h2>
     <br><div class="dashed-box">
-        <div class="number24">
-            <div class="fruit1"><h3>apple</h3></div>
-            <div class="fruit2"><h3>orange</h3></div>
-            <div class="fruit3"><h3>mango</h3></div>
-            <div class="fruit4"><h3>watermelon</h3></div>
-        </div>
+        <nav>
+            <li><h3>apple</h3></li>
+            <li class="orange"><h3>orange</h3></li>
+            <li><h3>mango</h3></li>
+            <li class="watermelon"><h3>watermelon</h3></li>
+        </nav> 
     </div>
     <!--End 2-->
 
     <!--Start 3-->
+    <h1>CSS Position</h1>
+    <br>
+    <h2>static</h2>
+    <br>
+    <div class="static-content">
+        <div class="dashed-box">
+            <div class="blue-box"></div>
+        </div>
+    </div>
+    
+
+    <h2>absolute</h2>
+    <br>
+    <h3>fixed width/height</h3>
+    <div class="fixed-wh">
+        <div class="dashed-box">
+            <div class="blue-box"></div>
+        </div>
+    </div>
+
+    <br><br><br><br><br>
+    <h3>no fixed width/height</h3>
+    <div class="nofixed-wh">
+        <div class="dashed-box">
+            <div class="blue-box"></div>
+        </div>
+    </div>
+
+    <br>
+    <h3>fixed width/height + right-top</h3>
+    <div class="fixed-wh-rt">
+        <div class="dashed-box">
+            <div class="blue-box"></div>
+        </div>
+    </div>
+   
     
 
 </body>
