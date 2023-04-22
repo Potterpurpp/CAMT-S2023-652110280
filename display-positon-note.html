@@ -18,7 +18,7 @@
             padding: 20px;
             border: 1px  dashed gray;
             background-color: azure;
-           
+            position: relative;
         }
         .pink-box {
             padding: 20px;
@@ -69,20 +69,62 @@
             position: absolute;
             height: 100px;
             width: 400px;
-
+           
         }
 
         .nofixed-wh {
             position: absolute;
+            width: 100%;
+       
         }
-        
-
-        .fixed-wh-rt {
-
+        .nofixed-wh .blue-box {
+            width: 100%;
+            height: unset;
+            padding: 2px;
         }
+        .white-box {
+                padding: 100px;
+                background-color: white;
+        }
+        .white-box b {
+            border-radius: 50px;
+            background-color: gray;
+            padding: 10px;
+            position: absolute;
+            right: 10px;
+            top: 10px;
+            color: white;
+        }
+
+        .floatsongkran {
+            position: absolute;
+            align-items: center;
+            color: rgb(214, 252, 177);
+            z-index: 10;
+        }
+
+        .box {
+            position: fixed;
+            background-color: palevioletred;
+            padding: 50px;
+            text-align: center;
+            transform: translateY(180%);
+            right: 50px;
+          
+        }
+
     </style>
 <body>
     <!--Start 1-->
+
+    <div class="floatsongkran">
+        <div class="box">
+            <h1>Songkran Festival 2023</h1>
+        </div>
+   
+ 
+    
+</div>
     <h1>Box Model</h1>
     <div class="dashed-box">
         <div class="pink-box">
@@ -178,15 +220,15 @@
         </div>
     </div>
 
-    <br>
+    <br><br><br><br><br>
     <h3>fixed width/height + right-top</h3>
     <div class="fixed-wh-rt">
         <div class="dashed-box">
-            <div class="blue-box"></div>
+            <div class="white-box">
+                <b>X</b>
+            </div>
         </div>
     </div>
-   
-    
 
 </body>
 </html>
