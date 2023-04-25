@@ -72,15 +72,16 @@
             display: flex;
             font-size: 30px;
             justify-content: space-between;
-           background-color: blueviolet;
+           background-color: rgb(176, 112, 236);
           
       
            border: 1px solid black;
            margin: 10px;
            padding:  10px;
         }
-        .header-content-left, .header-content, .header-content-right {
-            
+        .header-content-left, .header-content-right {
+            position: relative;
+            top: 5px;
         }
         
     </style>
@@ -322,21 +323,22 @@
             border: unset;
             margin: 10px;
             width: 300px;
-            display: ;
+            display: flex;
+            border: 1px solid black;
+            flex-direction: column;
         }
         .sidebar-profile-section {
             font-size: 30px;
             font-weight: bold;
-            border: 1px solid black;
+            border-bottom: 1px solid black;
             display: flex;
         }
         .sidebar-menu-section {
-      
-            border: 1px solid black;
-            border-top: unset;
+            height: 200px;
+            border-top: 0;
         }
         .sidebar-footer-section {
-
+            border-top: 1px solid black;
         }
 
     </style>
@@ -356,6 +358,7 @@
         </div>
       </div>
     </div>
+
   </div>
   <br>
 </body>
