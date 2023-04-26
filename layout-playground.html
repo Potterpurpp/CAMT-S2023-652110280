@@ -323,26 +323,45 @@
   <div class="playground">
     <style>
         .sidebar-container {
-            border: unset;
-            margin: 10px;
+            height: 100%;
             width: 300px;
             display: flex;
-            border: 1px solid black;
+           position: absolute;
+            border: 1px solid rgb(0, 0, 0);
             flex-direction: column;
+         
+            
         }
         .sidebar-profile-section {
             font-size: 30px;
             font-weight: bold;
             border-bottom: 1px solid black;
             display: flex;
+            padding: 10px;
         }
         .sidebar-menu-section {
-            height: 200px;
-            border-top: 0;
+          flex-grow: 1;
         }
         .sidebar-footer-section {
             border-top: 1px solid black;
+            padding-left: 5px;
+            
         }
+      /*  .sidebar-container {
+          display: flex;
+          flex-direction: column;
+          height: 100%;
+          position: absolute;
+          width: 300px;
+          background-color: wheat;
+          border: 1px solid black;
+        }*/
+        .sidebar-menu-section {
+        }
+        .sidebar-menu-item {
+          padding: 10px;
+        }
+
 
     </style>
 
