@@ -14,11 +14,39 @@
 
             var body = document.getElementsByTagName('body') [0]
             body.append(title)
+          
 
-            var bluebox = document.createElement('div') 
-            bluebox.style.display = 'inline-block'
-            bluebox.style.height = 309
+            var redBox = document.createElement('div')
+            redBox.style.width = '200px'
+            redBox.style.height = '200px'
+            redBox.style.backgroundColor = 'red'
 
+            redBox.addEventListener('click', function() {
+                console.log('redBox: clicked')
+            })
+
+            var blueBox = document.createElement('div') 
+            blueBox.style.display = 'inline-block'
+            blueBox.style.height = '180px'
+            blueBox.style.height = '180px'
+            blueBox.style.backgroundColor = 'blue'
+            blueBox.style.margin = '10px'
+
+            blueBox.addEventListener('click', function() {
+                console.log('blueBox: clicked')
+            })
+
+            var button = document.createElement('button')
+            button.innerText = 'click me'
+
+            button.addEventListener('click', function() {
+                console.log('button: clicked')
+            })
+            blueBox.append(button)
+            redBox.append(blueBox)
+            body.append(redBox)
+           
+            
 
         }
     </script>
