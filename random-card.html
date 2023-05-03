@@ -120,7 +120,7 @@
         font-size: 50px;
         text-align: center;
     }
-    .dokk {
+    .dokk-type{
         background-color: blue;
         text-align: right;
         font-size: 23px;
@@ -128,75 +128,70 @@
     }
 </style>
 <body>
-    <script>
-        window.onload = function() {
-        // card number and type
-    var CARD_TYPE = ['♣', '♦', '♥', '♠']
-    var CARD_NUMBER = ['A', '2', '3', '4', '5', '6','7', '8', '9', '10', 'J', 'Q', 'K']
 
-// random function
-// max: number > 0
-// return [0, max -1]
-    function random(max) {
-        return parseInt(Math.random() * max) % max
-    }
-// how to use random function
-    function onClickButtonRandom() {
-        
-        var cardList = document.getElementsByName('card')
-        var cardDokkElementList = document.getElementsByClassName('dokk')
-        var cardNumberElementList = document.getElementsByClassName('number-pai')
-
-        for (let index = 0; index < cardDokkElementList.length; index++) {
-            var cardElm = cardList[index]
-            var cardTitleElm = cardDokkElementList[index]
-            var cardBodyElm = cardNumberElementList[index]
-
-            var cardType = CARD_TYPE[random(CARD_TYPE.length)]
-            var cardNumber= CARD_NUMBER[random(CARD_NUMBER.length)]
-           switch (cardType) {
-            case '♦': cardElm.classList.add('diamond');
-                break;
-            case '♥': cardElm.classList.add('heart')
-                 break;
-            default:
-                cardElm.classList.innerText = cardType
-                cardBody.classList.innerText = cardBody
-           }
-           cardTitleElm.innerText = cardType
-           cardBodyElm.innerText = cardNumber
-        }
-    }
-        }
-    </script>
+  
     
         <div class="box-green">
             <div class="pai">
+
                 <div class="card">
-                    <div class="dokk">y</div>
+                    <div class="dokk-type">y</div>
                     <div class="number-pai">x</div>
                 </div>
                 
                 <div class="card">
-                    <div class="dokk">y</div>
+                    <div class="dokk-type">y</div>
                     <div class="number-pai">x</div>
                 </div>
 
                 <div class="card">
-                    <div class="dokk">y</div>
+                    <div class="dokk-type">y</div>
                     <div class="number-pai">x</div>
                 </div>
 
                 <div class="card">
-                    <div class="dokk">y</div>
+                    <div class="dokk-type">y</div>
                     <div class="number-pai">x</div>
                 </div>
                
             </div>
 
             <div class="button-content">
-                <button class="random-button" onclick="onClickButtonRandom()">Click to Random</button>
+                <button  onclick="onClickButtonRandom()">Click to Random </button>
             </div>
         </div>
+
 </body>
+<script>
+    function onClickButtonRandom() {
+            // card number and type
+    var CARD_TYPE = ['♣', '♦', '♥', '♠']
+    var CARD_NUMBER = ['A', '1', '2', '3', '4', '5', '6',' 7', '8', '9', '10', 'J', 'Q', 'K']
+    var card = document.querySelectorAll(".pai > div")    
+        // random function
+        // max: number > 0
+    // return [0, max -1]
+    function random(max) {
+        return parseInt(Math.random() * max) % max
+    }
+
+    // how to use random function
+    
+        for(i=0; i<card.length;i++) {
+            var cardType = CARD_TYPE[random(CARD_TYPE.length)]
+            var cardNumber = CARD_NUMBER[random(CARD_NUMBER.length)]
+
+            card[i].querySelector(".dokk-type").innerHTML = cardType;
+            card[i].querySelector(".number-pai").innerHTML= cardNumber;
+            console.log(cardType, cardNumber)
+
+            if(cardType === '♥' || cardType === '♦') {
+                card[i].style.color = "red";
+            }else {
+                card[i].style.color = "black";
+            }
+
+        }
+    }
+</script>
 </html>
