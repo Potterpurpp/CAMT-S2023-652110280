@@ -7,27 +7,39 @@
     <title>Document</title>
 </head>
 <style>
+    * {
+        margin: 0;
+        padding: 0;
+    }
+    body {
+        margin: 10px;
+    }
     .box-green {
         width: 100%;
         background-color: green;
         height: 700px;
         display: inline-flex;
         flex-direction: column;
-        border: 1px solid black;
+        border-radius: 8px;
     }
     .pai{
         flex-grow: 1;
         display: inline-flex;
-        flex-direction: row;
+        margin: 20px;
+        gap: 25px;
+        
     }
-    .boxes {
+    .card {
         background-color: ghostwhite;
         width: 150px;
-        margin: 20px;
+        overflow: hidden;
         height: 500px;
         flex-grow: 1;
-        
-        
+        display: flex;
+        flex-direction: column;
+        border-radius: 8px;
+        border: 4px solid purple;
+        border-radius: 10px;
     }
     button {
         width: 100%;
@@ -35,7 +47,17 @@
         background-color: blanchedalmond;
     }
     .number-pai {
-
+        border-radius: 8px;
+        right: 30px;
+        flex-grow: 1;
+        font-size: 50px;
+        text-align: center;
+    }
+    .dokk {
+        background-color: blue;
+        text-align: right;
+        font-size: 23px;
+        padding: 10px;
     }
 </style>
 <body>
@@ -53,43 +75,52 @@
     }
 // how to use random function
     var cardType = CARD_TYPE[random(CARD_TYPE.length)]
+    document.getElementById("type").innerHTML = CARD_TYPE
     var cardNumber = CARD_NUMBER[random(CARD_NUMBER.length)]
+    document.getElementById("numby").innerHTML = CARD_NUMBER
     console.log(cardType, cardNumber)
         }
     </script>
+    
         <div class="box-green">
             <div class="pai">
-                <div class="boxes">
+
+                <div class="card">
                     <div class="dokk">
+                        <h1 id="type"></h1>
                     </div>
                     <div class="number-pai">
-
-                    </div>
-                </div>
-                <div class="boxes">
-                    <div class="dokk">
-                    </div>
-                    <div class="number-pai">
-
-                    </div>
-                </div>
-                <div class="boxes">
-                    <div class="dokk">
-                    </div>
-                    <div class="number-pai">
-
-                    </div>
-                </div>
-                <div class="boxes">
-                    <div class="dokk">
-                    </div>
-                    <div class="number-pai">
-
+                        <h1 id="numby"></h1>
                     </div>
                 </div>
                 
-                    
+                <div class="card">
+                    <div class="dokk">
+                        <h1 id="type"></h1>
+                    </div>
+                    <div class="number-pai">
+                        <h1 id="numby"></h1>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="dokk">
+                        <h1 id="type"></h1>
+                    </div>
+                    <div class="number-pai">
+                        <h1 id="numby"></h1>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="dokk">
+                        <h1 id="type"></h1>
+                    </div>
+                    <div class="number-pai">
+                        <h1 id="numby"></h1>
+                    </div>
+                </div>
+               
             </div>
+
             <div class="button-content">
                 <button onclick="function random() {
                     console.log(cardType, cardNumber)}">Click to Random</button>
