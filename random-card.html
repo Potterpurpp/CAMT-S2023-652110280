@@ -21,15 +21,15 @@
         display: inline-flex;
         flex-direction: column;
         border-radius: 8px;
+        border: 1px solid black;
     }
     .pai{
         flex-grow: 1;
         display: inline-flex;
         margin: 20px;
         gap: 25px;
-        
     }
-    .card {
+    .card-dokjig {
         background-color: ghostwhite;
         width: 150px;
         overflow: hidden;
@@ -38,14 +38,69 @@
         display: flex;
         flex-direction: column;
         border-radius: 8px;
-        border: 4px solid purple;
+        color: black;
+        border: 4px solid black;
         border-radius: 10px;
+        box-shadow: 5px 5px  salmon;
+        
+    }
+    .card-diamond{
+        background-color: ghostwhite;
+        width: 150px;
+        overflow: hidden;
+        height: 500px;
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
+        border-radius: 8px;
+        color: red;
+        border: 4px solid red;
+        box-shadow: 5px 5px yellow;
+        border-radius: 10px;
+    }
+    .card-heart{
+        background-color: ghostwhite;
+        width: 150px;
+        overflow: hidden;
+        height: 500px;
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
+        border-radius: 8px;
+        border: 4px solid red;
+        box-shadow: 5px 5px yellow;
+        color: red;
+        border-radius: 10px;
+    }
+    .card-podam{
+        background-color: ghostwhite;
+        width: 150px;
+        overflow: hidden;
+        height: 500px;
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
+        border-radius: 8px;
+        color: black;
+        border: 4px solid black;
+        border-radius: 10px;
+        box-shadow: 5px 5px  salmon;
     }
     button {
         width: 100%;
         height: 60px;
         background-color: blanchedalmond;
+        color: black;
+        font-weight: 700;
+        text-transform: uppercase;
+        
+        border: unset;
     }
+    button::after :hover{
+        background-color: aqua;
+        
+    }
+
     .number-pai {
         border-radius: 8px;
         right: 30px;
@@ -62,10 +117,11 @@
 </style>
 <body>
     <script>
+        
         window.onload = function() {
         // card number and type
     var CARD_TYPE = ['♣', '♦', '♥', '♠']
-    var CARD_NUMBER = ['A', '1', '2', '3', '4', '5', '6',' 7', '8', '9', '10', 'J', 'Q', 'K']
+    var CARD_NUMBER = ['A', '2', '3', '4', '5', '6','7', '8', '9', '10', 'J', 'Q', 'K']
 
 // random function
 // max: number > 0
@@ -73,57 +129,69 @@
     function random(max) {
         return parseInt(Math.random() * max) % max
     }
+        var cardType = CARD_TYPE[random(CARD_TYPE.length)]
+        document.getElementById("type").innerHTML = CARD_TYPE
+        var cardNumber = CARD_NUMBER[random(CARD_NUMBER.length)]
+        document.getElementById("numby").innerHTML = CARD_NUMBER
 // how to use random function
-    var cardType = CARD_TYPE[random(CARD_TYPE.length)]
-    document.getElementById("type").innerHTML = CARD_TYPE
-    var cardNumber = CARD_NUMBER[random(CARD_NUMBER.length)]
-    document.getElementById("numby").innerHTML = CARD_NUMBER
-    console.log(cardType, cardNumber)
+    function onClickButtonRandom() {
+        
+        var cardList = document.getElementsByName('card')
+        var cardDokkElementList = document.getElementsByClassName('dokk')
+        var cardNumberElementList = document.getElementsByClassName('number-pai')
+        for (let index = 0; index < cardDokkElementList.length; index++) {
+            var cardElm = cardList[index]
+            var cardTitleElm = cardDokkElementList[index]
+            var cardBodyElm = cardNumberElementList[index]
+
+            var cardType = CARD_TYPE[random(CARD_TYPE.length)]
+            var cardNumber= CARD_NUMBER[random(CARD_NUMBER.length)]
+           switch (cardType) {
+            case '♦': cardElm.classList.add('diamond');
+                break;
+            case '♥': cardElm.classList.add('heart')
+                 break;
+            default:
+                cardElm.classList.innerText = cardType
+                cardBody.classList.innerText = cardBody
+           }
+
+           cardTitleElm.innerText = cardType
+           cardBodyElm.innerText = cardNumber
+            
+        }
+    }
+    
         }
     </script>
     
         <div class="box-green">
             <div class="pai">
 
-                <div class="card">
-                    <div class="dokk">
-                        <h1 id="type"></h1>
-                    </div>
-                    <div class="number-pai">
-                        <h1 id="numby"></h1>
-                    </div>
+                <div class="card-dokjig">
+                    <div class="dokk">y</div>
+                    <div class="number-pai">x</div>
                 </div>
                 
-                <div class="card">
-                    <div class="dokk">
-                        <h1 id="type"></h1>
-                    </div>
-                    <div class="number-pai">
-                        <h1 id="numby"></h1>
-                    </div>
+                <div class="card-diamond">
+                    <div class="dokk">y</div>
+                    <div class="number-pai">x</div>
                 </div>
-                <div class="card">
-                    <div class="dokk">
-                        <h1 id="type"></h1>
-                    </div>
-                    <div class="number-pai">
-                        <h1 id="numby"></h1>
-                    </div>
+
+                <div class="card-heart">
+                    <div class="dokk">y</div>
+                    <div class="number-pai">x</div>
                 </div>
-                <div class="card">
-                    <div class="dokk">
-                        <h1 id="type"></h1>
-                    </div>
-                    <div class="number-pai">
-                        <h1 id="numby"></h1>
-                    </div>
+
+                <div class="card-podam">
+                    <div class="dokk">y</div>
+                    <div class="number-pai">x</div>
                 </div>
                
             </div>
 
             <div class="button-content">
-                <button onclick="function random() {
-                    console.log(cardType, cardNumber)}">Click to Random</button>
+                <button class="random-button" onclick="onClickButtonRandom()">Click to Random</button>
             </div>
         </div>
 </body>
