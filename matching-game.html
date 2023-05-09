@@ -7,13 +7,81 @@
     <title>Document</title>
 </head>
 <style>
-    * {
+    *{
         margin: 0;
         padding: 0;
         box-sizing: border-box;
     }
     body {
         height: 100vh;
+    }
+    .board {
+        background-color: lawngreen;
+    }
+    .board-content {
+        display: flex;
+        justify-content: space-between;
+        
+    }
+    .card-zone {
+       width: 100%;
+       display: flex;
+       flex-wrap: wrap;
+    }
+    .card {
+        margin: 10px;
+        height: 130px;
+        width: 90px;
+        background: whitesmoke;
+        border-radius: 5px;
+        border: 2px solid black;
+        box-shadow: 1px 2px 3px palevioletred;
+    }
+    .card-face-down {
+        margin: 10px;
+        height: 130px;
+        width: 90px;
+        background: whitesmoke;
+        border-radius: 5px;
+        border: 2px solid blue;
+        display: flex;
+        flex-direction: column;
+        box-shadow: 1px 2px 3px blueviolet;
+    }
+    .card  .card-body {
+        text-align: center;
+        font-size: 30px;
+        margin-top: 14%;
+    }
+    .card-title {
+        text-align: right;
+        padding-right: 5px;
+        font-size: 28px;
+    }
+    .card-body {
+        text-align: center;
+        font-size: 30px;
+        margin-top: 50%;
+    }
+    .player-zone {
+        text-align: center;
+        height: 90vh;
+        width: 200px;
+        background-color: coral;
+        border: 3px solid black; 
+        color: white;
+    }
+    .player-player-a {
+        height: 50%;
+        border-bottom: 3px solid black; 
+    }
+    .player-score {
+        margin-top: 50%;
+        font-size: 50px;
+    }
+    .new-game-button {
+        height: 10vh;
+        width: 100%;
     }
     
 </style>
@@ -31,7 +99,7 @@
                 </div>
             </div>
             <!--Face-down Card-->
-            <div class="card face-down">
+            <div class="card-face-down">
                 <div class="card-title">
                     
               </div>
@@ -41,7 +109,7 @@
             </div>
           </div>
           <div class="player-zone">
-            <div class="player player-a">
+            <div class="player-player-a">
               <div class="player-title">
                 Player A
               </div>
@@ -49,7 +117,7 @@
                 0
               </div>
             </div>
-            <div class="player player-b">
+            <div class="player-player-b">
               <div class="player-title">
                 Player B
               </div>
