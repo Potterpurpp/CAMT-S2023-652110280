@@ -120,7 +120,8 @@
         </div>
       </div>
       <script>
-
+        var CARD_TYPE = ['♣', '♦', '♥', '♠']
+        var CARD_NUMBER = ['A', '2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K']
         var cardList = [
   { value: ['♣', 'A'], isFaceDown: true },
   { value: ['♣', '2'], isFaceDown: false },
@@ -185,16 +186,26 @@ function htmlToElem(html) {
 function random(max) {
         return parseInt(Math.random() * max) % max
 }
+function shuffleCard(){
+  for (let index = cardList.length-1; index >= 0; index--){
+    let j = Math.floor(Math.random()*index+1);
 
+    var temp = cardList[index];
+    cardList[index] = cardList[j];
+    cardList[j] = temp;
+
+
+  }
+}
 function renderCardList() {
-  
+  shuffleCard();
   // TODO: define cardZoneElm here
   const cardZoneElm = document.getElementsByClassName("card-zone")[0]
   var checker = [true,false];
   
   // before append any DOM(s), you need to clear all children of cardZoneElm
   cardZoneElm.innerHTML = "";
-	for (var index=0; index < cardList.length; index++) {
+	for (var index=0; index < 52; index++) {
 		// TODO:
     
     var randomCheck = checker[random(checker.length)];
@@ -218,10 +229,13 @@ function renderCardList() {
 		cardZoneElm.append(cardElm)
   }
 }
-function shuffle() {
-    ran
+function generate() {
+  
+
+  cardList;
 }
-window.onload = random(renderCardList);
+
+window.onload = renderCardList;
       </script>
     
 </body>
