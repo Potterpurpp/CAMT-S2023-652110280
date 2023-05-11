@@ -39,7 +39,7 @@
         margin: 10px;
         height: 130px;
         width: 90px;
-        background: lightgray;
+        background-color: chocolate;
         border-radius: 5px;
         border: 2px solid blue;
         display: flex;
@@ -132,6 +132,19 @@
   { value: ['♣', 'J'], isFaceDown: true },
   { value: ['♣', 'Q'], isFaceDown: true },
   { value: ['♣', 'K'], isFaceDown: false },
+  { value: ['♦', 'A'], isFaceDown: true },
+  { value: ['♦', '2'], isFaceDown: true },
+  { value: ['♦', '3'], isFaceDown: false },
+  { value: ['♦', '4'], isFaceDown: false },
+  { value: ['♦', '5'], isFaceDown: true },
+  { value: ['♦', '6'], isFaceDown: false },
+  { value: ['♦', '7'], isFaceDown: true },
+  { value: ['♦', '8'], isFaceDown: true },
+  { value: ['♦', '9'], isFaceDown: true },
+  { value: ['♦', '10'], isFaceDown: true },
+  { value: ['♦', 'J'], isFaceDown: true },
+  { value: ['♦', 'Q'], isFaceDown: true },
+  { value: ['♦', 'K'], isFaceDown: false },
   { value: ['♥', 'A'], isFaceDown: true },
   { value: ['♥', '2'], isFaceDown: true },
   { value: ['♥', '3'], isFaceDown: false },
@@ -145,6 +158,19 @@
   { value: ['♥', 'J'], isFaceDown: true },
   { value: ['♥', 'Q'], isFaceDown: true },
   { value: ['♥', 'K'], isFaceDown: false },
+  { value: ['♠', 'A'], isFaceDown: true },
+  { value: ['♠', '2'], isFaceDown: true },
+  { value: ['♠', '3'], isFaceDown: false },
+  { value: ['♠', '4'], isFaceDown: false },
+  { value: ['♠', '5'], isFaceDown: true },
+  { value: ['♠', '6'], isFaceDown: false },
+  { value: ['♠', '7'], isFaceDown: true },
+  { value: ['♠', '8'], isFaceDown: true },
+  { value: ['♠', '9'], isFaceDown: true },
+  { value: ['♠', '10'], isFaceDown: true },
+  { value: ['♠', 'J'], isFaceDown: true },
+  { value: ['♠', 'Q'], isFaceDown: true },
+  { value: ['♠', 'K'], isFaceDown: false },
 ]
 
 function htmlToElem(html) {
@@ -153,37 +179,39 @@ function htmlToElem(html) {
   temp.innerHTML = html;
   return temp.content.firstChild;
 }
+function random(max) {
+        return parseInt(Math.random() * max) % max
+}
 
 function renderCardList() {
+  
   // TODO: define cardZoneElm here
-  const cardZoneElm = document.getElementsByClassName("card-zone")
+  const cardZoneElm = document.getElementsByClassName("card-zone")[0]
+  var checker = [true,false];
   // before append any DOM(s), you need to clear all children of cardZoneElm
+  cardZoneElm.innerHTML = "";
 	for (var index=0; index < cardList.length; index++) {
 		// TODO:
+    var randomCheck = checker[random(checker.length)];
+    cardList[index].isFaceDown = randomCheck;
 		// if isFaceDown is true, create a card component with 'face-down' class
     if (cardList[index].isFaceDown === true) {
       cardElm = htmlToElem(
-			'<div class="card face-down"><div class="card-title"></div><div class="card-body">?</div></div>'
+			'<div class="card-face-down"><div class="card-title"></div><div class="card-body">?</div></div>'
 		)
     } 
     else {
       cardElm = htmlToElem(
-			'<div class="card"><div class="card-title">♣</div><div class="card-body">9</div></div>'
-		)
+			'<div class="card"><div class="card-title">'+cardList[index].value[0]+'</div><div class="card-body">'+cardList[index].value[1]+'</div></div>')
+      if(cardList[index].value[0] === '♦' || cardList[index].value[0] ==='♥') {
+      cardElm.style.color = "red"
     }
-	//	cardElm = htmlToElem(
-		//	'<div class="card"><div class="card-title">♣</div><div class="card-body">9</div></div>'
-		//)
-    
-		cardZoneElm[0].append(cardElm)
-    
+    }
    
+
+		cardZoneElm.append(cardElm)
   }
-  
-
- 
 }
-
       </script>
     
 </body>
