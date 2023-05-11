@@ -205,7 +205,7 @@ function renderCardList() {
   
   // before append any DOM(s), you need to clear all children of cardZoneElm
   cardZoneElm.innerHTML = "";
-	for (var index=0; index < 52; index++) {
+	for (var index=0; index < cardList.length; index++) {
 		// TODO:
     
     var randomCheck = checker[random(checker.length)];
