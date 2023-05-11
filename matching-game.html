@@ -62,23 +62,26 @@
         margin-top: 50%;
     }
     .player-zone {
+        margin-top: 10px;
+        flex-grow: 1;
         text-align: center;
-        height: 90vh;
+        height: 100%;
         width: 200px;
         background-color: coral;
         border: 3px solid black; 
         color: white;
     }
     .player-player-a {
-        height: 50%;
+        height: 350px;
         border-bottom: 3px solid black; 
     }
     .player-score {
-        margin-top: 50%;
+      height: 342px;
+        margin-bottom: 10px;
         font-size: 50px;
     }
     .new-game-button {
-        height: 10vh;
+        height: 80px;
         width: 100%;
     }
     
@@ -188,12 +191,15 @@ function renderCardList() {
   // TODO: define cardZoneElm here
   const cardZoneElm = document.getElementsByClassName("card-zone")[0]
   var checker = [true,false];
+  
   // before append any DOM(s), you need to clear all children of cardZoneElm
   cardZoneElm.innerHTML = "";
 	for (var index=0; index < cardList.length; index++) {
 		// TODO:
+    
     var randomCheck = checker[random(checker.length)];
     cardList[index].isFaceDown = randomCheck;
+    
 		// if isFaceDown is true, create a card component with 'face-down' class
     if (cardList[index].isFaceDown === true) {
       cardElm = htmlToElem(
@@ -212,6 +218,10 @@ function renderCardList() {
 		cardZoneElm.append(cardElm)
   }
 }
+function shuffle() {
+    ran
+}
+window.onload = random(renderCardList);
       </script>
     
 </body>
